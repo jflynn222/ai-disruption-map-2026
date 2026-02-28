@@ -47,7 +47,8 @@ return<div style={{minHeight:"100vh",background:"#08090E",color:"#E2E8F0",fontFa
 <div style={{maxWidth:960,margin:"0 auto"}}>
 <div style={{fontSize:10,fontWeight:700,letterSpacing:3,color:"#FF6B6B",marginBottom:6,textTransform:"uppercase",fontFamily:"'JetBrains Mono',monospace"}}>Economic Analysis 2026</div>
 <h1 style={{fontSize:mob?24:28,fontWeight:800,margin:"0 0 6px",fontFamily:"'Sora',sans-serif",color:"#F8FAFC"}}>The AI Disruption Map</h1>
-<p style={{fontSize:mob?12:13,color:"#64748B",margin:0,lineHeight:1.5}}>How AI reshapes every sector — separating the GDP growth story from the employment impact story.</p>
+<p style={{fontSize:mob?12:13,color:"#64748B",margin:"0 0 12px",lineHeight:1.5}}>How AI reshapes every sector — separating the GDP growth story from the employment impact story.</p>
+<div style={{padding:"10px 14px",borderRadius:8,background:"linear-gradient(90deg,rgba(255,107,107,0.08),rgba(254,202,87,0.08))",border:"1px solid rgba(255,107,107,0.2)"}}><p style={{fontSize:mob?11:12,color:"#FECA57",margin:0,lineHeight:1.6,fontFamily:"'DM Sans',sans-serif"}}><strong style={{color:"#FF6B6B"}}>Timeline:</strong> The fastest-moving sectors (Tech, Professional Services, Media) are restructuring <em>now</em>. By 2027, most sectors will feel measurable impact. The window to adapt is 18–36 months, not a decade.</p></div>
 </div></div>
 
 <div style={{maxWidth:960,margin:"0 auto",padding:mob?"16px 12px 48px":"20px 16px 64px"}}>
@@ -88,9 +89,11 @@ return<div style={{minHeight:"100vh",background:"#08090E",color:"#E2E8F0",fontFa
 <div style={{position:"absolute",top:0,left:0,right:"50%",bottom:"50%",background:"rgba(255,107,107,0.03)"}}/>
 <div style={{position:"absolute",top:0,left:"50%",right:0,bottom:"50%",background:"rgba(254,202,87,0.03)"}}/>
 <div style={{position:"absolute",top:"50%",left:"50%",right:0,bottom:0,background:"rgba(46,213,115,0.03)"}}/>
+<div style={{position:"absolute",top:"50%",left:0,right:"50%",bottom:0,background:"rgba(84,160,255,0.03)"}}/>
 <div style={{position:"absolute",top:8,left:10,fontSize:8,color:"#FF6B6B",fontWeight:700,opacity:0.5,fontFamily:"'JetBrains Mono',monospace"}}>PAIN</div>
 <div style={{position:"absolute",top:8,right:10,fontSize:8,color:"#FECA57",fontWeight:700,opacity:0.5,fontFamily:"'JetBrains Mono',monospace"}}>TENSION</div>
 <div style={{position:"absolute",bottom:8,right:10,fontSize:8,color:"#2ED573",fontWeight:700,opacity:0.5,fontFamily:"'JetBrains Mono',monospace"}}>WIN-WIN</div>
+<div style={{position:"absolute",bottom:8,left:10,fontSize:8,color:"#54A0FF",fontWeight:700,opacity:0.5,fontFamily:"'JetBrains Mono',monospace"}}>GENTLE</div>
 {sectors.map(s=>{const x=((s.gdpImpact+1)/7)*82+9;const y=((10-s.unemploymentRisk)/10)*82+6;const sz=mob?Math.max(20,s.gdpPct*3):Math.max(26,s.gdpPct*4);return<div key={s.name} onClick={()=>{sView("sectors");sExp(s.name)}} style={{position:"absolute",left:`${x}%`,top:`${y}%`,transform:"translate(-50%,-50%)",width:sz,height:sz,borderRadius:"50%",background:s.color+"30",border:`2px solid ${s.color}60`,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer",zIndex:10}} title={s.name}><span style={{fontSize:Math.max(9,sz/3)}}>{s.emoji}</span></div>})}
 </div>
 <div style={{display:"flex",flexWrap:"wrap",gap:6,marginTop:10,justifyContent:"center"}}>{sectors.map(s=><span key={s.name} style={{fontSize:9,color:"#64748B",display:"flex",alignItems:"center",gap:2}}><span style={{fontSize:10}}>{s.emoji}</span>{mob?null:s.name}</span>)}</div>
